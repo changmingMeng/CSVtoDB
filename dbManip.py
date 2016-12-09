@@ -17,7 +17,8 @@ class dbManipulate(object):
     def Insert(self, ID, date, time, erl, updata, downdata, alldata, netType):
         cursor = self.conn.cursor()
         cursor.execute("insert into cell_data (ID, date, time, erl, updata, downdata, alldata, netType)\
-                        values(ID, date, time, erl, updata, downdata, alldata, netType)")
+                        values(%s, %s, %s, %s, %s, %s, %s, %s)",
+                       ID, date, time, erl, updata, downdata, alldata, netType)
 
 
 if __name__ == "__main__":
