@@ -14,10 +14,11 @@ class dbManipulate(object):
     def __del__(self):
         self.conn.close()
 
-
-
-
+    def Insert(self, ID, date, time, erl, updata, downdata, alldata, netType):
+        cursor = self.conn.cursor()
+        cursor.execute("insert into cell_data (ID, date, time, erl, updata, downdata, alldata, netType)\
+                        values(ID, date, time, erl, updata, downdata, alldata, netType)")
 
 
 if __name__ == "__main__":
-
+    pass
